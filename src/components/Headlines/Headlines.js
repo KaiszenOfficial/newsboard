@@ -4,9 +4,9 @@ import './Headlines.css';
 
 export default function Headlines({ headline }) {
 
-	const formattedContent = (body) => {
+	const formattedContent = (body, url) => {
 		if(body) {
-			return (<Typography variant="body1">{body.split('[+')[0]} <Button size="small">Read More</Button></Typography>)
+			return (<Typography variant="body1">{body.split('[+')[0]} <Button size="small" href={url} target="_blank">Read More</Button></Typography>)
 		}
 		return (
 			<Typography variant="body1"></Typography>
@@ -46,7 +46,7 @@ export default function Headlines({ headline }) {
         >
           {headline.author}
         </Typography>
-        {formattedContent(headline.content)}
+        {formattedContent(headline.content, headline.url)}
       </CardContent>
     </Card>
   );
