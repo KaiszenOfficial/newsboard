@@ -1,3 +1,10 @@
-### The idea behind this project is very simple. A one stop webpage where the user can browse through the daily headlines of what is happening around the world. The user is given the choice to choose the country, the category of news he wants to read as well the source he wants to read it from along with a direct link to the article on the source website. This project uses an open source API called [newsapi.org](https://newsapi.org). Do check them out.
+### NewsBoard
+![NewsBoard](screenshot.png)
 
-### The live demo is available [here](http://kaiszenofficial.github.io/newsboard/). Feel free to take it for a spin and give feedbacks.
+**This application was built to consolidate the major headlines from news outlets accross the world. The categories are defined and the users are free to select from a range of news sources for example BBC News. It also contains a country selection so that you can choose from the providers of a specific country and follow what is happening there.**
+
+#### Tach Stack
+*For this project I went with **ReactJS** with **Material-UI** used for the styled display.*
+
+#### Current version and future plans
+*The app works fine if you download and run it in local but unfortunately the 3rd party API being used to fetch the news headlines and sources doesn't allow for requests from anywhere other than localhost in its developer plan.*
