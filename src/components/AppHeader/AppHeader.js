@@ -20,7 +20,7 @@ export default function AppHeader({ onCountryChange }) {
   };
 
 	return (
-    <AppBar position="static" sx={{ backgroundColor: "#282c34" }}>
+    <AppBar position="static">
       <Toolbar variant="dense">
         <img src={logo} alt="Logo" className="app-logo" />
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -29,7 +29,7 @@ export default function AppHeader({ onCountryChange }) {
 
         <IconButton
           size="large"
-          aria-label="account of current user"
+          aria-label="Select language"
           aria-controls="menu-appbar"
           aria-haspopup="true"
           onClick={handleMenu}

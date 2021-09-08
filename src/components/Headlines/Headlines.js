@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardMedia, Typography } from '@material-ui/core';
+import { Button, CardContent, CardMedia, Paper, Typography } from '@material-ui/core';
 import React from 'react';
 import './Headlines.css';
 
@@ -14,7 +14,7 @@ export default function Headlines({ headline }) {
 	}
 
 	return (
-    <Card variant="elevation" sx={{ height: "630px" }}>
+    <Paper elevation={0} square sx={{ height: "630px" }}>
       <CardMedia
         sx={{
           height: 0,
@@ -26,7 +26,7 @@ export default function Headlines({ headline }) {
       <CardContent>
         <Typography
           variant="subtitle1"
-          sx={{ marginBottom: "2rem", color: "rgba(0, 0, 0, 0.5)" }}
+          sx={{ marginBottom: "2rem" }}
         >
           {new Date(headline.publishedAt).toDateString()}
         </Typography>
@@ -40,7 +40,6 @@ export default function Headlines({ headline }) {
           variant="subtitle1"
           sx={{
             marginBottom: "2rem",
-            color: "rgba(0, 0, 0, 0.5)",
             fontWeight: "bold",
           }}
         >
@@ -48,6 +47,6 @@ export default function Headlines({ headline }) {
         </Typography>
         {formattedContent(headline.content, headline.url)}
       </CardContent>
-    </Card>
+    </Paper>
   );
 }

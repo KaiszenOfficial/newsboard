@@ -1,18 +1,23 @@
+import { Fragment, useEffect, useState } from 'react';
+import { Container, createTheme, CssBaseline, Grid, ThemeProvider } from '@material-ui/core';
 import './App.css';
 import { AppHeader, Breadcrumb, Headlines, Loader } from './components';
 import { categories } from './constants';
-import { Fragment, useEffect, useState } from 'react';
 import { fetchHeadlines, fetchSources } from './api';
-import { Container, createTheme, Grid } from '@material-ui/core';
-import { ThemeProvider } from '@emotion/react';
 
 const theme = createTheme({
   typography: {
-    fontFamily: [
-      '"Baloo 2"',
-      'cursive'
-    ].join(','),
+    fontFamily: "'Merriweather Sans', sans-serif",
   },
+	palette: {
+		mode: 'dark',
+		primary: {
+			main: '#673ab7'
+		},
+		secondary: {
+			main: '#00e5ff'
+		}
+	}
 });
 
 function App() {
@@ -54,6 +59,7 @@ function App() {
   return (
     <Fragment>
       <ThemeProvider theme={theme}>
+				<CssBaseline />
         <AppHeader onCountryChange={handleCountryChange} />
 				{!loading && currentSource && headlines.length ? 
 					(<Container fixed sx={{ padding: "1rem" }}>
@@ -65,7 +71,7 @@ function App() {
 							onCategoryChange={handleCategoryChange}
 							onSourceChange={handleSourceChange}
 						/>
-						<Grid container spacing={2}>
+						<Grid container spacing={4}>
 							{headlines.length
 								? headlines.map((headline, index) => (
 										<Grid key={index} item xs={12} md={6}>
