@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = window.location.href;
+const baseUrl = window.location.origin;
 const headlinesPath = 'v2/top-headlines';
 const sourcesPath = 'v2/top-headlines/sources';
 
